@@ -91,7 +91,8 @@ img {
 .post-title {
 	position: absolute;
 	transition: .2s;
-	margin-top: 16px;
+	padding-top: 16px;
+	width: 100%;
 }
 
 .post:not(:hover) .post-title {
@@ -108,6 +109,11 @@ img {
 #hardware-checkbox:checked ~ .container .post-list .post-software,
 #software-checkbox:checked ~ .container .post-list .post-hardware {
 	background-color: #eee;
+}
+
+#hardware-checkbox:checked ~ .container .post-list .post-software,
+#software-checkbox:checked ~ .container .post-list .post-hardware {
+	pointer-events: none;
 }
 
 #hardware-checkbox:checked ~ .container .post-list .post-software .post-title,
