@@ -1,0 +1,136 @@
+@font-face {
+    font-family: 'Px Grotesk web';
+    src: url('fonts/PxGrotesk-Bold.woff2') format('woff2'),
+         url('fonts/PxGrotesk-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Px Grotesk web';
+    src: url('fonts/PxGrotesk-Regular.woff2') format('woff2'),
+    		 url('fonts/PxGrotesk-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: 'Px Grotesk web';
+	font-size: 12px;
+	line-height: 16px;
+	color: #222;
+	-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, .h1 {
+	font-size: 48px;
+	line-height: 48px;
+	letter-spacing: -0.06em;
+	margin: 0;
+}
+
+@media (max-width: 425px) {
+	h1, .h1 {
+		font-size: 32px;
+		line-height: 32px;
+	}	
+}
+
+a {
+	color: inherit;
+}
+
+img {
+	max-width: 100%;
+}
+
+.main-header {
+	margin-top: 52px;
+	margin-bottom: 48px;
+}
+
+@media (max-width: 425px) {
+	.main-header {
+		margin-top: 32px;
+		margin-bottom: 32px;
+	}	
+}
+
+.container {
+	padding: 0 56px;
+}
+
+@media (max-width: 425px) {
+	.container {
+		padding: 0 32px;
+	}
+}
+
+.post-image {
+	max-height: 128px;
+	display: block;
+}
+
+.post-list {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.post {
+	margin-right: 32px;
+	margin-bottom: 80px;
+	position: relative;
+}
+
+.post-title {
+	position: absolute;
+	transition: .2s;
+	margin-top: 16px;
+}
+
+.post:not(:hover) .post-title {
+	opacity: .5;
+	transition: .8s;
+}
+
+.filter {
+	font-weight: bold;
+	opacity: .2;
+	cursor: pointer;
+}
+
+#hardware-checkbox:checked ~ .container .post-list .post-software,
+#software-checkbox:checked ~ .container .post-list .post-hardware {
+	background-color: #eee;
+}
+
+#hardware-checkbox:checked ~ .container .post-list .post-software .post-title,
+#software-checkbox:checked ~ .container .post-list .post-hardware .post-title {
+	opacity: 0;
+	transition: .2s;
+}
+
+#hardware-checkbox:checked ~ .container .post-list .post-software .post-image,
+#software-checkbox:checked ~ .container .post-list .post-hardware .post-image {
+	opacity: 0;
+}
+
+#all-checkbox:checked ~ .container .filters .filter-all,
+#software-checkbox:checked ~ .container .filters .filter-software,
+#hardware-checkbox:checked ~ .container .filters .filter-hardware {
+	opacity: 1;
+}
+
+#all-checkbox,
+#software-checkbox,
+#hardware-checkbox {
+	position: absolute;
+	left: -400px;
+	opacity: 0;
+}
