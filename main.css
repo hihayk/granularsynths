@@ -20,7 +20,7 @@
 
 body {
 	margin: 0;
-	font-family: 'Px Grotesk web';
+	font-family: 'Px Grotesk web', system-ui, sans-serif;
 	font-size: 12px;
 	line-height: 16px;
 	color: #222;
