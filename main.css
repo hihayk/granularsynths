@@ -134,3 +134,16 @@ img {
 	left: -400px;
 	opacity: 0;
 }
+
+.main-section {
+	min-height: calc(100vh - 112px);
+}
+
+footer {
+	color: #888;
+	margin-bottom: 32px;
+}
+
+.footer-divider {
+	margin: 0 8px;
+}
